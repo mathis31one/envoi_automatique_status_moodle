@@ -1,7 +1,8 @@
 import json
 from envoi_status import evoyer_status
 
-with open("program_version\\accounts.json", "r") as accounts_file:
-    accounts = json.load(accounts_file)
-    for key in accounts:
-        evoyer_status(key,accounts[key])
+
+with open("program_version\\settings.json", "r") as settings_file:
+    settings = json.load(settings_file)
+    for profile in settings["profiles"]:
+        evoyer_status(settings["chrome_location"],settings["user_profile_dir"],profile)

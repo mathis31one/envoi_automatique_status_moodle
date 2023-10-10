@@ -1,0 +1,8 @@
+{
+    "chrome_location" : "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "user_profile_dir" :"C:/Users/username/AppData/Local/Google/Chrome/User Data",
+    "profiles" : [
+        "Profile 1",
+        "Profile 3"
+    ]
+}

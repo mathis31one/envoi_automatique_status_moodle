@@ -3,10 +3,11 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-def evoyer_status(chrome_path, user_data_path):
+def evoyer_status(chrome_path, user_data_path, profile):
     options = Options()
     options.binary_location = chrome_path # C:/Program Files/Google/Chrome/Application/chrome.exe
     options.add_argument(f"user-data-dir={user_data_path}") # C:/Users/username/AppData/Local/Google/Chrome/User Data/Profile [number]
+    options.add_argument(f'--profile-directory={profile}')
     driver = webdriver.Chrome(options=options)
     driver.get("https://moodle-miage-toulouse.westeurope.cloudapp.azure.com/login/index.php")
     longin_button = driver.find_element(By.CLASS_NAME,"loginbtn ")
@@ -18,7 +19,6 @@ def evoyer_status(chrome_path, user_data_path):
     for activity in activity_classes:
         try:
             activity.click()
-            break
         except:
             pass
     sleep(1)
