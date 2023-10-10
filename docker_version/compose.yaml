@@ -1,0 +1,6 @@
+services:
+  script:
+   build: ./scripts/
+  
+  chrome:
+   image: selenium/standalone-chrome
